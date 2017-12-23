@@ -15,37 +15,43 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>Drum synthesis</h1>
-        <p>Examples of drum synthesis using the Web Audio API.</p>
-
-        <p class="view"><a href="https://github.com/chrislo/drum_synthesis">View the Project on GitHub <small>chrislo/drum_synthesis</small></a></p>
-
-        <ul>
-          <li><a href="https://github.com/chrislo/drum_synthesis/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/chrislo/drum_synthesis/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/chrislo/drum_synthesis">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Drum Synthesis.</h3>
-
-        <p>This example of drum synthesis was created for
-        an <a href="https://dev.opera.com/articles/drum-sounds-webaudio/">article
-        I wrote for the Opera Developer blog</a>. You should go there
-        to read the gory details.</p>
-
-        <p>
-          <button id="play" class="pure-button pure-button-disabled">PLAY</button>
-          <button id="pause" class="pure-button">PAUSE</button>
-        </p>
-
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/chrislo">chrislo</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        <div class="kick-button">Kick</div>
     </div>
+
+<div id="yes"> 
+                <input id="calibrate-beta"/>
+                <button id="calibrate">Calibrate</button>
+                <h2>Beta <span id="remembered-beta">-9999</span>
+                </h2>
+                <h2>Prev Beta <span id="previous-beta">-9999</span>
+                    <br>
+                    Already kicked : <span id="already-kicked">XXX</span>
+                </h2>
+				<div class="box" id="accel">
+					<span class="head">Accelerometer</span>
+					<span id="xlabel">X: 0</span>
+					<span id="ylabel">Y: 0</span>
+					<span id="zlabel">Z: 0</span>
+					<span id="ilabel">I: 16</span>					
+                    <div>
+					<span id="arAlphaLabel">arA: 0</span>										
+					<span id="arBetaLabel">arB: 0</span>										
+					<span id="arGammaLabel">arG: 0</span>																				
+                    </div>
+				</div>		
+			
+				<div class="box" id="gyro">
+					<span class="head">Gyroscope</span>
+					<span id="alphalabel">Alpha: 0</span>			
+					<span id="betalabel">Beta: 0</span>
+					<span id="gammalabel">Gamma: 0</span>
+				</div>
+				
+				<div class="box2" id="accelcolor" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255); font-weight: bold;">Color: #000</div>
+				<div class="box2" id="gyrocolor" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255); font-weight: bold;">Color: #000</div>
+				<div class="box2" id="gap" style="background: rgb(0, 0, 0); color: rgb(255, 255, 255); font-weight: bold;"></div>
+				
+		</div>
     <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/jquery-2.1.3.min.js"></script>
     <script src="javascripts/Tone.min.js"></script>

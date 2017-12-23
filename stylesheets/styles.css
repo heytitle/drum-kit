@@ -253,3 +253,9 @@ footer {
     color:#444;
   }
 }
+
+.kick-button {
+     background: red;
+     height: 100px;
+     width: 100px;
+}
