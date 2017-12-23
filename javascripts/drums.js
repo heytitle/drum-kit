@@ -117,35 +117,15 @@ else {
             if(!already_kick){
                 kick.trigger();
                 already_kick = true;
+                prev_beta = projected_beta
+                $('#previous-beta').text(prev_beta);
             }
         }
 
         if( projected_beta > -3.5 ) {
              already_kick =false;
-             prev_beta = beta;
-            $('#previous-beta').text(prev_beta);
         }
-    }
 
-    function d2h(d) {return d.toString(16);}
-    function h2d(h) {return parseInt(h,16);}
-
-    function makecolor(a, b, c) {
-        red = Math.abs(a) % 255;
-        green = Math.abs(b) % 255;
-        blue = Math.abs(c) % 255;
-        return "#" + d2h(red) + d2h(green) + d2h(blue);
-    }
-
-    function makeacceleratedcolor(a, b, c) {
-        red = Math.round(Math.abs(a + az) % 255);
-        green = Math.round(Math.abs(b + ay) % 255);
-        blue = Math.round(Math.abs(c + az) % 255);
-        return "#" + d2h(red) + d2h(green) + d2h(blue);
-    }
-
-    setInterval(function() {
-        /*
         document.getElementById("xlabel").innerHTML = "X: " + ax;
         document.getElementById("ylabel").innerHTML = "Y: " + ay;
         document.getElementById("zlabel").innerHTML = "Z: " + az;
@@ -157,28 +137,14 @@ else {
         document.getElementById("betalabel").innerHTML = "Beta: " + beta;
         document.getElementById("gammalabel").innerHTML = "Gamma: " + gamma;
 
-        document.getElementById("accelcolor").innerHTML = "Color: " + makecolor(ax, ay, az);
-        //document.getElementById("accelcolor").style.background = makecolor(ax, ay, az);
-        document.getElementById("accelcolor").style.color = "#FFFFFF";
-        document.getElementById("accelcolor").style.fontWeight = "bold";
-
-        document.getElementById("gyrocolor").innerHTML = "Color: " + makecolor(alpha, beta, gamma);
-        //document.getElementById("gyrocolor").style.background = makecolor(alpha, beta, gamma);
-        document.getElementById("gyrocolor").style.color = "#FFFFFF";
-        document.getElementById("gyrocolor").style.fontWeight = "bold";
-        */
-
         $('#calibrate-beta').val(beta);
-        $('#calibrate').on('click', function(elem){
-            threshold = $('#calibrate-beta').val();
-            console.log(threshold);
-            $('#remembered-beta').text(threshold);
-        });
-
-        //document.bgColor = makecolor(arAlpha, arBeta, arGamma);
         $('#already-kicked').text(already_kick);
+    }
 
-    }, delay);
+    $('#calibrate').on('click', function(elem){
+        threshold = $('#calibrate-beta').val();
+        $('#remembered-beta').text(threshold);
+    });
 }
 
 
